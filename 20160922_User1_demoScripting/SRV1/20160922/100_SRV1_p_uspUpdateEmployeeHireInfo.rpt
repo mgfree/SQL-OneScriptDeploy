@@ -1,0 +1,114 @@
+﻿script is                            The time is :           on server
+------------------------------------ ----------------------- --------------------------------------------------------------------------------------------------------------------------------
+100_SRV1_p_uspUpdateEmployeeHireInfo 2016-09-22 21:28:51.123 WIN-CK1GU04TCNH\SQL2K14BI
+
+(1 row(s) affected)
+
+Before image
+	exec sp_helptext uspUpdateEmployeeHireInfo
+Text
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE PROCEDURE [HumanResources].[uspUpdateEmployeeHireInfo]
+    @BusinessEntityID [int], 
+    @JobTitle [nvarchar](50), 
+    @HireDate [datetime], 
+    @RateChangeDate [datetime], 
+    @Rate [money], 
+    @PayFrequency [tinyint], 
+    @CurrentFlag [dbo].[Flag] 
+WITH EXECUTE AS CALLER
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        UPDATE [HumanResources].[Employee] 
+        SET [JobTitle] = @JobTitle 
+            ,[HireDate] = @HireDate 
+            ,[CurrentFlag] = @CurrentFlag 
+        WHERE [BusinessEntityID] = @BusinessEntityID;
+
+        INSERT INTO [HumanResources].[EmployeePayHistory] 
+            ([BusinessEntityID]
+            ,[RateChangeDate]
+            ,[Rate]
+            ,[PayFrequency]) 
+        VALUES (@BusinessEntityID, @RateChangeDate, @Rate, @PayFrequency);
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
+        BEGIN
+            ROLLBACK TRANSACTION;
+        END
+
+        EXECUTE [dbo].[uspLogError];
+    END CATCH;
+END;
+
+Update Begin
+	Dropping uspUpdateEmployeeHireInfo
+	Creating uspUpdateEmployeeHireInfo
+Update Done
+After image
+	exec sp_helptext uspUpdateEmployeeHireInfo
+Text
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CREATE PROCEDURE [HumanResources].[uspUpdateEmployeeHireInfo]
+    @BusinessEntityID [int], 
+    @JobTitle [nvarchar](50), 
+    @HireDate [datetime], 
+    @RateChangeDate [datetime], 
+    @Rate [money], 
+    @PayFrequency [tinyint], 
+    @CurrentFlag [dbo].[Flag] 
+WITH EXECUTE AS CALLER
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        UPDATE [HumanResources].[Employee] 
+        SET [JobTitle] = @JobTitle 
+            ,[HireDate] = @HireDate 
+            ,[CurrentFlag] = @CurrentFlag 
+        WHERE [BusinessEntityID] = @BusinessEntityID;
+
+        INSERT INTO [HumanResources].[EmployeePayHistory] 
+            ([BusinessEntityID]
+            ,[RateChangeDate]
+            ,[Rate]
+            ,[PayFrequency]) 
+        VALUES (@BusinessEntityID, @RateChangeDate, @Rate, @PayFrequency);
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        -- Rollback any active or uncommittable transactions before
+        -- inserting information in the ErrorLog
+        IF @@TRANCOUNT > 0
+        BEGIN
+            ROLLBACK TRANSACTION;
+        END
+
+        EXECUTE [dbo].[uspLogError];
+    END CATCH;
+END;
+
+
+script is                            The time is :           on server
+------------------------------------ ----------------------- --------------------------------------------------------------------------------------------------------------------------------
+100_SRV1_p_uspUpdateEmployeeHireInfo 2016-09-22 21:28:51.223 WIN-CK1GU04TCNH\SQL2K14BI
+
+(1 row(s) affected)
+

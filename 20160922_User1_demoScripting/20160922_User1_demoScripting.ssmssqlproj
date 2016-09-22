@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="20160922_User1_demoScripting">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="WIN-CK1GU04TCNH\SQL2K14BI:WIN-CK1GU04TCNH\Administrator">
+          <Created>2016-09-22T20:03:04.1554659+10:00</Created>
+          <Type>SQL</Type>
+          <Server>WIN-CK1GU04TCNH\SQL2K14BI</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>ReportServer$SQL2K14BI</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="_100_SRV1_exec_SQLCMD.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-CK1GU04TCNH\SQL2K14BI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-CK1GU04TCNH\SQL2K14BI</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>_100_SRV1_exec_SQLCMD.sql</FullPath>
+        </FileNode>
+        <FileNode Name="100_SRV1_p_uspUpdateEmployeeHireInfo.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-CK1GU04TCNH\SQL2K14BI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-CK1GU04TCNH\SQL2K14BI</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>100_SRV1_p_uspUpdateEmployeeHireInfo.sql</FullPath>
+        </FileNode>
+        <FileNode Name="505_SRV1_i_AddressType.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-CK1GU04TCNH\SQL2K14BI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-CK1GU04TCNH\SQL2K14BI</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>505_SRV1_i_AddressType.sql</FullPath>
+        </FileNode>
+        <FileNode Name="gen_SRV1_exec_SQLCMD.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-CK1GU04TCNH\SQL2K14BI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-CK1GU04TCNH\SQL2K14BI</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>gen_SRV1_exec_SQLCMD.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
